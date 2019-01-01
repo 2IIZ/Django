@@ -1,5 +1,5 @@
 # @Date:   2019-01-01T11:10:47+01:00
-# @Last modified time: 2019-01-01T12:10:46+01:00
+# @Last modified time: 2019-01-01T20:49:31+01:00
 
 # f5 to run
 print(" _______________________VARIABLES______________________\n\n")
@@ -36,3 +36,25 @@ hello("a string made by hand")
 
 
 print("\n")
+
+
+print(" _______________________LISTS______________________\n\n")
+
+dogNames = ["Jax", "Cro", "Iv", "Squalo"]
+
+#print list
+print(dogNames)
+
+#add one item
+dogNames.insert(0, "AddedTo0")
+print(dogNames)
+
+#show one item
+print(dogNames[3])
+
+#del one item
+del(dogNames[4])
+print(dogNames)
+
+#length of list
+print(len(dogNames))

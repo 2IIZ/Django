@@ -1,7 +1,8 @@
 # @Date:   2019-01-01T11:10:47+01:00
-# @Last modified time: 2019-01-01T20:49:31+01:00
+# @Last modified time: 2019-01-03T09:57:23+01:00
 
 # f5 to run
+
 print(" _______________________VARIABLES______________________\n\n")
 
 age = 20
@@ -58,3 +59,22 @@ print(dogNames)
 
 #length of list
 print(len(dogNames))
+
+print("\n")
+
+print(" _______________________LOOPS______________________\n\n")
+
+for dog in dogNames:
+	print(dog)
+
+print("\n")
+
+for x in range(0, 11):
+	print(x)
+
+print("\n")
+
+bool = True
+while bool == True:
+	print(bool)
+	bool = False

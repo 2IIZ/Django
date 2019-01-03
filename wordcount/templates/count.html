@@ -5,6 +5,18 @@
 		<title></title>
 	</head>
 	<body>
-		count
+		<h3>There are {{countword}} word in your text</h3> <br>
+
+		<h3>Full text</h3>
+		{{fulltext}}
+		<br><br>
+
+		<h3>Total word count</h3>
+		{% for word, counttotal in sortedwords %}
+
+		{{counttotal}} {{word}}
+		<br>
+
+		{% endfor %}
 	</body>
 </html>

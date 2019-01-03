@@ -7,8 +7,8 @@
 	<body>
 		<h1>WordCount</h1>
 
-		<form action="{{% url 'count' %}}">
-			<textarea name="name" rows="8" cols="40"></textarea>
+		<form action="{% url 'count' %}">
+			<textarea name="fulltext" rows="8" cols="40"></textarea>
 			<br>
 			<input type="submit" value="Count!"/>
 		</form>

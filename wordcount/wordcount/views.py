@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T11:34:37+01:00
-# @Last modified time: 2019-01-03T15:49:43+01:00
+# @Last modified time: 2019-01-03T16:00:59+01:00
 
 #return some info into http response
 from django.http import HttpResponse
@@ -11,9 +11,7 @@ def home(request):
 	return render(request, 'home.html')
 
 def count(request):
-	#name='count' -> don't repeat yourself, used in form for action="" (home.html)
-	#used for disassosiate the url
-	return render(request, 'count.html', name='count')
+	return render(request, 'count.html')
 
 
 def goat(request):

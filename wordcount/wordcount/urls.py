@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T11:02:15+01:00
-# @Last modified time: 2019-01-03T11:39:05+01:00
+# @Last modified time: 2019-01-03T15:45:34+01:00
 
 """wordcount URL Configuration
 
@@ -23,5 +23,7 @@ from . import views
 
 urlpatterns = [
 	path('', views.home),
+	path('count/', views.count),
+
 	path('goat', views.goat)
 ]

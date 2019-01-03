@@ -1,5 +1,5 @@
 # @Date:   2019-01-01T11:10:47+01:00
-# @Last modified time: 2019-01-03T09:57:23+01:00
+# @Last modified time: 2019-01-03T10:22:51+01:00
 
 # f5 to run
 
@@ -69,12 +69,31 @@ for dog in dogNames:
 
 print("\n")
 
+#go through 0 to 10
 for x in range(0, 11):
 	print(x)
 
 print("\n")
 
 bool = True
+#verify if it's true then print true
 while bool == True:
 	print(bool)
 	bool = False
+
+
+print(" _______________________DICTIONARIES______________________\n\n")
+
+goats = {"Fido":8, "Camop":10, "Thor":4}
+
+#print the age of Fido !
+print(goats["Fido"])
+
+#kill one goat
+del(goats["Camop"])
+
+#new born
+goats["Pedro"] = 0
+
+#print all goats
+print(goats)

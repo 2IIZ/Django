@@ -1,3 +1,8 @@
+# @Date:   2019-01-03T11:02:15+01:00
+# @Last modified time: 2019-01-03T11:45:01+01:00
+
+
+
 """
 Django settings for wordcount project.
 
@@ -54,7 +59,7 @@ ROOT_URLCONF = 'wordcount.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,5 +1,5 @@
 # @Date:   2019-01-01T11:10:47+01:00
-# @Last modified time: 2019-01-03T10:22:51+01:00
+# @Last modified time: 2019-01-03T10:36:42+01:00
 
 # f5 to run
 
@@ -97,3 +97,27 @@ goats["Pedro"] = 0
 
 #print all goats
 print(goats)
+
+print("\n")
+
+print(" _______________________CLASS______________________\n\n")
+
+class Goat:
+	goatInfo = "Goat are masters"
+
+	#self is added to show the inner content (python's practice)
+	def __init__(self, name, age, furcolor):
+		self.name = name
+		self.age = age
+		self.furcolor = furcolor
+
+	# bleat = bark for a goat
+	def bleat(self):
+		print("BEEEEEE")
+
+mygoat = Goat("Jax", "2", "Red")
+mygoat.bleat()
+
+
+print(mygoat.name)
+print(Goat.goatInfo)

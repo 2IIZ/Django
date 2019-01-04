@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-04T10:33:44+01:00
+# @Last modified time: 2019-01-04T10:55:45+01:00
 
 
 
@@ -125,8 +125,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# added for creating a directory to save uploaded images
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# added for creating a directory to save uploaded images. FOLDER
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 'media' can be different from the one under
 
-# when someong try to access the image
+# when someong try to access the image. URL
 MEDIA_URL = '/media/'

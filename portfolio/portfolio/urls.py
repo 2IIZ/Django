@@ -1,3 +1,8 @@
+# @Date:   2019-01-03T17:30:45+01:00
+# @Last modified time: 2019-01-04T10:54:37+01:00
+
+
+
 """portfolio URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,7 +20,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # static() added so you can access the image without an error

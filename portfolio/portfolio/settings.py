@@ -1,3 +1,8 @@
+# @Date:   2019-01-03T17:30:45+01:00
+# @Last modified time: 2019-01-04T10:33:44+01:00
+
+
+
 """
 Django settings for portfolio project.
 
@@ -31,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+	'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,3 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# added for creating a directory to save uploaded images
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# when someong try to access the image
+MEDIA_URL = '/media/'

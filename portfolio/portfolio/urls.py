@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-04T10:54:37+01:00
+# @Last modified time: 2019-01-04T16:07:46+01:00
 
 
 
@@ -22,7 +22,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+	path('', jobs.views.home, name="home"), #will search the home page of jobs 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # static() added so you can access the image without an error

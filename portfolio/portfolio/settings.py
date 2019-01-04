@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-04T10:55:45+01:00
+# @Last modified time: 2019-01-04T11:46:56+01:00
 
 
 
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfolio',
+		'USER': 'postgres',
+		'PASSWORD': ' ',
+		'HOST': '127.0.0.1',
+		'PORT': '5432',
     }
 }
 

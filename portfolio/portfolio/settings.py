@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-04T11:46:56+01:00
+# @Last modified time: 2019-01-04T15:21:40+01:00
 
 
 
@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+	'blog.apps.BlogConfig',
 	'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

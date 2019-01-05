@@ -1,5 +1,5 @@
 # @Date:   2019-01-04T09:54:48+01:00
-# @Last modified time: 2019-01-04T15:38:07+01:00
+# @Last modified time: 2019-01-06T00:24:49+01:00
 
 
 
@@ -11,3 +11,12 @@ class Blog(models.Model):
 	publication_date = models.DateTimeField()
 	body = models.TextField()
 	image = models.ImageField(upload_to='images/')
+
+	def __str__(self): #that show the particular object in admin section
+		return self.title
+
+	def summary(self):
+		return self.body[:100] + "..." #return the first 100 char of the body string
+
+	def publication_date_pretty(self):
+		return self.publication_date.strftime('%B %e %Y')

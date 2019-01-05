@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-04T16:07:46+01:00
+# @Last modified time: 2019-01-05T22:07:24+01:00
 
 
 
@@ -19,12 +19,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	path('', jobs.views.home, name="home"), #will search the home page of jobs 
+	path('', jobs.views.home, name="home"), #will search the home page of jobs
+	path('blog/', include('blog.urls')), # go to the urls of /blog/urls.py and search at that level (for making lighter this file)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # static() added so you can access the image without an error

@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+	{% load staticfiles %}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Jekyll v3.8.5">
-	<title> . </title>
+	<title> Blog </title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -34,15 +35,15 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
-				<a class="navbar-brand" href="#">Ivan</a>
+				<a class="navbar-brand" href="{% url 'home' %}">Ivan</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav ml-auto">
-						<a class="nav-item nav-link" href="#">Link</a>
-						<a class="nav-item nav-link" href="#">Resume</a>
-						<a class="nav-item nav-link active" href="#">Blog</a>
+						<a class="nav-item nav-link" href="https://github.com/2IIZ">Git</a>
+						<a class="nav-item nav-link" href="{% static 'cv.jpg' %}">Resume</a>
+						<a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
 					</div>
 				</div>
 		</nav>
@@ -64,7 +65,8 @@
 					<img class="img-fluid rounded" src="{{ blog.image.url }}" height="100%" width="300" />
 				</div>
 				<div class="col-md">
-					<a href="#">
+					<!-- 'detail need a parameter, the blog id' -->
+					<a href="{% url 'detail' blog.id %}">
 						<h3>{{ blog.title }}</h3>
 					</a>
 					<p>{{ blog.publication_date_pretty }}</p>

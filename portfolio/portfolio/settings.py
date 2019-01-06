@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-04T15:21:40+01:00
+# @Last modified time: 2019-01-06T21:01:38+01:00
 
 
 
@@ -128,10 +128,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR, 'portfolio/static/')
+]
+
+#same as under
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # added for creating a directory to save uploaded images. FOLDER
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 'media' can be different from the one under
-
 # when someong try to access the image. URL
 MEDIA_URL = '/media/'

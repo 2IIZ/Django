@@ -1,5 +1,5 @@
 # @Date:   2019-01-04T09:54:48+01:00
-# @Last modified time: 2019-01-06T00:35:11+01:00
+# @Last modified time: 2019-01-06T20:41:32+01:00
 
 
 
@@ -19,3 +19,4 @@ def detail(request, blog_id):
 
 #1 import blog
 #2 retrieve data and pass data to the html with a dictionary
+#3 add it to the html page with {{ blog.title }}

@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-07T16:37:33+01:00
+# @Last modified time: 2019-01-07T16:51:33+01:00
 
 
 
@@ -84,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfolio',
-		'USER': 'postgres',
+		'USER': 'iv',
 		'PASSWORD': ' ',
 		'HOST': '127.0.0.1',
 		'PORT': '5432',

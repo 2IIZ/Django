@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-07T16:34:02+01:00
+# @Last modified time: 2019-01-07T16:37:33+01:00
 
 
 
@@ -142,5 +142,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 'media' can be different from the
 MEDIA_URL = '/media/'
 
 
+# local support for the settings file
 try:
 	from local_settings import *
+except ImportError:
+	pass

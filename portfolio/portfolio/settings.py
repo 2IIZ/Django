@@ -1,5 +1,5 @@
 # @Date:   2019-01-03T17:30:45+01:00
-# @Last modified time: 2019-01-06T21:01:38+01:00
+# @Last modified time: 2019-01-07T16:34:02+01:00
 
 
 
@@ -140,3 +140,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 'media' can be different from the one under
 # when someong try to access the image. URL
 MEDIA_URL = '/media/'
+
+
+try:
+	from local_settings import *

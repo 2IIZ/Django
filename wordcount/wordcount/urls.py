@@ -18,7 +18,7 @@ Including another URLconf
 """
 
 from django.urls import path
-# . -> this directory
+# . -> root directory
 from . import views
 
 urlpatterns = [

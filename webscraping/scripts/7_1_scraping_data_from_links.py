@@ -17,9 +17,9 @@ def run():
                subsubstring = "html"
                if substring in string:
                    if subsubstring in string:
-                       extract_data("http://nature.jardin.free.fr/"+string)
-                       # extract_data("http://nature.jardin.free.fr/arbre/jlv_acer_cap_aur.html")
-
+                       # extract_data("http://nature.jardin.free.fr/"+string)
+                       extract_data("http://nature.jardin.free.fr/arbre/jlv_acer_cap_aur.html")
+                       return
 
 def extract_data(full_url):
     with urlopen(full_url) as response: # open the requested url
@@ -30,9 +30,7 @@ def extract_data(full_url):
         extracted_html = re.findall(p_pattern, str(soup))
         extracted_html = ''.join(extracted_html)
 
-        # extracted_html = re.sub('<([Bb])>', '', extracted_html)
-        # extracted_html = re.sub('</([Bb])>', '', extracted_html)
-        extractsed_html = re.sub('<br>', '', extracted_html)
+        extracted_html = re.sub('<br>', ' ', extracted_html)
         extracted_html = re.sub('&eacute;', 'é', extracted_html)
         extracted_html = re.sub('&Eacute;', 'É', extracted_html)
         extracted_html = re.sub('&egrave;', 'è', extracted_html)
@@ -40,7 +38,17 @@ def extract_data(full_url):
         extracted_html = re.sub('&agrave;', 'à', extracted_html)
         extracted_html = re.sub('&acirc;', 'â', extracted_html)
         extracted_html = re.sub('&nbsp;', ' ', extracted_html)
-        # extracted_html = re.sub('<a [^>]{0,}>', '', extracted_html)
         extracted_html = re.sub('<([Bb]|/[Bb]|[Aa]|/[Aa]|[Ii]|/[Ii])[^>]{0,}>', '', extracted_html)
 
-        print(extracted_html)
+        extracted_html = re.split('Nom commun :|Nom latin :|famille :|catégorie :|port :|feuillage :', extracted_html)
+
+        del(extracted_html[0])
+
+        key = ["Nom commun :", "Nom latin :", "Famille :","Catégorie :", "Port :", "Feuillage :"]
+        list = {}
+
+        for x in range(0, len(key)):
+            list[key[x]] = extracted_html[x]
+
+        for key, value in list.items():
+        	print(key, value, "\n")

@@ -32,7 +32,12 @@
 
           <hr>
 
-          <p class="lead"> Product url : <a href="{{produc.url}}"> Hunt !</a> <a class="float-right" href="#"><button class="btn-primary" type="button" name="button">+ {{product.total_votes}} </button></a></p>
+          <p class="lead"> Product url :
+            <a href="{{produc.url}}"> Hunt !</a>
+            <a class="float-right" href="javascript:{document.getElementById('upvote').submit()}">
+              <button class="btn-primary" type="button" name="button">+ {{product.total_votes}} </button>
+            </a>
+          </p>
 
           <!-- Post Content -->
           <p>{{product.body}}</p>
@@ -108,5 +113,10 @@
 
     </div>
     <!-- /.container -->
+
+    <form id="upvote" method="POST" action="{% url 'upvote' product.id %}">
+      {% csrf_token%}
+      <input type="hidden">
+    </form>
 
 {% endblock %}

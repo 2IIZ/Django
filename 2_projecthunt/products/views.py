@@ -4,7 +4,8 @@ from .models import Product
 from django.utils import timezone
 
 def home(request):
-    return render(request, "products/home.html")
+    products = Product.objects # take all Products from the db
+    return render(request, "products/home.html", {'products':products})
 
 @login_required # will sends back to singup page if it's not loged in
 def create(request):
@@ -29,3 +30,11 @@ def create(request):
 def detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id) # if not able to find the id product, sends 404
     return render(request, 'products/detail.html', {'product':product})
+
+@login_required
+def upvote(request, product_id):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=product_id)
+        product.total_votes += 1
+        product.save()
+        return redirect('/products/' + str(product.id))

@@ -7,7 +7,7 @@ def home(request):
     products = Product.objects # take all Products from the db
     return render(request, "products/home.html", {'products':products})
 
-@login_required # will sends back to singup page if it's not loged in
+@login_required(login_url="/accounts/signup") # will sends back to singup page if it's not loged in
 def create(request):
     if request.method == 'POST':
         if request.POST['title'] and request.POST['body'] and request.POST['url'] and request.FILES['icon'] and request.FILES['image']:
@@ -31,7 +31,7 @@ def detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id) # if not able to find the id product, sends 404
     return render(request, 'products/detail.html', {'product':product})
 
-@login_required
+@login_required(login_url="/accounts/signup")
 def upvote(request, product_id):
     if request.method == 'POST':
         product = get_object_or_404(Product, pk=product_id)

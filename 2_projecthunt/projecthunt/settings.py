@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'projecthunt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'projecthunt',
-		'USER': 'postgres',
-		'PASSWORD': ' ',
-		'HOST': '127.0.0.1',
-		'PORT': '5432',
+		'USER': 'root',
+		'PASSWORD': '',
+		'HOST': '',
+		'PORT': '',
     }
 }
 

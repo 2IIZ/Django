@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="container">
+
+  {% for product in products.all %}
+
+  <div class="row" onclick="window.location='{% url 'detail' product.id %}'" style="cursor: pointer;">
+
+    <div class="col-2">
+      <img src="{{ product.image.url }}" max-height="50" class="img-fluid img-thumbnail">
+    </div>
+
+    <div class="col-6">
+      <h1>{{product.title}}</h1>
+      <em>By <a href="#">{{product.hunter}}</a></em>
+      <article>
+        <p>
+          {{product.summary}}
+        </p>
+      </article>
+    </div>
+
+  </div>
+
+  <hr>
+
+
+
+
+
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}

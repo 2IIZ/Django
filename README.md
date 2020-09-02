@@ -1,1 +1,1 @@
-Django
+Django projects for learning
